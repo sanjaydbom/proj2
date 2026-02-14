@@ -1,6 +1,6 @@
 # CS 118 Project 2
 
-**Due Date:** Refer to Canvas/Gradescope
+**Due Date:** Friday, March 13th
 
 ## Overview
 
