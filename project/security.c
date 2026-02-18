@@ -16,11 +16,15 @@ tlv *server_hello = NULL;
 bool inc_mac = false;
 
 static uint64_t read_be_uint(const uint8_t* bytes, size_t nbytes) {
-    UNUSED(bytes);
-    UNUSED(nbytes);
+    //UNUSED(bytes);
+    //UNUSED(nbytes);
     // TODO: parse an unsigned integer from a big-endian byte sequence.
     // Hint: this is used for certificate lifetime fields.
-    return 0;
+    uint64_t num = 0;
+    for(size_t i = 0; i < nbytes; i++) {
+        num = (num << 8) + bytes[i];
+    }
+    return num;
 }
 
 static bool parse_lifetime_window(const tlv* life, uint64_t* start_ts, uint64_t* end_ts) {
